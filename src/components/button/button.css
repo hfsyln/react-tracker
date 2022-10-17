@@ -1,0 +1,9 @@
+.div-none {
+    border: 1px solid red; 
+    display: block;
+}
+
+.div-flex {
+    border: 1px solid black; 
+    display: none;
+}
