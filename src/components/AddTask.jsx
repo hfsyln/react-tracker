@@ -1,8 +1,11 @@
-import React from 'react'
+import Task from "./Task/Task"
 
-const AddTask = () => {
+const AddTask = ({task, date}) => {
   return (
-    <div>AddTask</div>
+    <div>
+      <h1>{task}</h1>
+      <p>{date}</p>
+    </div>
   )
 }
 

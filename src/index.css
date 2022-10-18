@@ -14,7 +14,7 @@ body {
 .entered {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin: 2rem;
 }
 .div-none {
   border: 1px solid red; 
