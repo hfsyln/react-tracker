@@ -1,16 +1,19 @@
-import Task from "./Task/Task"
+import React from "react"
 
-const AddTask = (sendTask) => {
-  console.log(sendTask)
-  const {task, date} = sendTask
+
+const AddTask = ({item, index}) => {
+console.log(item)
+/*console.log(item.task)*/
+/*const [task, date] = item
+
   console.log(task)
-  console.log(date)
-  return (
-    <div className="card">
-      <h1>{task}</h1>
-      <p>{date}</p>
+  console.log(date)*/
+  return /*(
+    <div className="card" key= {index}>
+     <h1></h1>
+     <p></p>
     </div>
-  )
+  )*/
 }
 
 export default AddTask

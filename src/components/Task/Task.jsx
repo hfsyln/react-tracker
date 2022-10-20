@@ -3,24 +3,28 @@ import AddTask from "../AddTask";
 
 const Task = () => {
 
-  const [task, setTitle] = useState("")
+  const [task, setTask] = useState("")
   const [date, setDate] = useState("")
-  const [sendTask, setSendTask] = useState("")
+  const [sendTask, setSendTask] = useState([])
 
   
   const handleSubmit = (e) => {
     // form içerisindeki buton submit olur ve handlesubmit otomatik çalışır
     e.preventDefault();
     const newTask = { task, date}; //aynı isim ile gönderiyorsam yeterli ama t:title de olur
+    
     console.log(newTask)
-    setSendTask([newTask])
+    
+    setSendTask([...sendTask, newTask])
     console.log(sendTask)
-    console.log(...sendTask)
-    setTitle("");
+    
+    setTask("");
     setDate("");
   };
 
+  console.log(sendTask)
 
+  
 
 
   return (
@@ -37,7 +41,7 @@ const Task = () => {
           id="title"
           placeholder="Enter your title"
           value={task}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => setTask(e.target.value)}
           required
         />
       </div>
@@ -59,9 +63,15 @@ const Task = () => {
       
     </form>
 
-    <AddTask sendTask = {...sendTask} />
+    
+    {sendTask.map((item, index)=> {
+      console.log(item)
+      return <AddTask  item = {item} index ={index} />
+    })}
+    
   </div>
  
+    
   )
 }
 
