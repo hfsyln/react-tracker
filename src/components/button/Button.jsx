@@ -28,9 +28,9 @@ const Button = () => {
         
         <button onClick = {clicked}>Show Add Task Bar</button>
 
-        <div className= {clickBtn ? "div-flex" : "div-none" }>
-            <Task/>
-        </div>
+      {!clickBtn && <Task/> }
+            
+        
      
     </div>
   )
