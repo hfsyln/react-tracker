@@ -11,7 +11,6 @@ const AddTask = ({sendTask}) => {
     document.querySelector(".card").remove()
   }
 
-
   
   return (
     <div>

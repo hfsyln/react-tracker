@@ -2,17 +2,25 @@ import { useState } from "react";
 import AddTask from "../AddTask";
 
 const Task = () => {
+<<<<<<< HEAD
   
   const [task, setTask] = useState("")
   const [date, setDate] = useState("")
   const [sendTask, setSendTask] = useState([])
   
+=======
+
+  const [task, setTask] = useState("")
+  const [date, setDate] = useState("")
+  const [sendTask, setSendTask] = useState([])
+>>>>>>> 6feb390478e601f0410682deac899f7f698ec258
 
   
 
   const handleSubmit = (e) => {
     // form içerisindeki buton submit olur ve handlesubmit otomatik çalışır
     e.preventDefault();
+<<<<<<< HEAD
     
     const newTask = {
      
@@ -28,6 +36,24 @@ const Task = () => {
   
   console.log(sendTask)
   
+=======
+    const newTask = { task, date}; //aynı isim ile gönderiyorsam yeterli ama t:title de olur
+    
+    console.log(newTask)
+    
+    setSendTask([...sendTask, newTask])
+    console.log(sendTask)
+    
+    setTask("");
+    setDate("");
+  };
+
+  console.log(sendTask)
+
+  
+
+
+>>>>>>> 6feb390478e601f0410682deac899f7f698ec258
   return (
     <div className="container text-center mt-4">
     <h1 className="display-6 text-danger">Add Your Tutorial</h1>
@@ -62,8 +88,21 @@ const Task = () => {
       </div>
       <button className="btn btn-danger mb-4">Submit</button>
     </form>
+<<<<<<< HEAD
      <AddTask  sendTask = {sendTask}/>
   </div>
+=======
+
+    
+    {sendTask.map((item, index)=> {
+      console.log(item)
+      return <AddTask  item = {item} index ={index} />
+    })}
+    
+  </div>
+ 
+    
+>>>>>>> 6feb390478e601f0410682deac899f7f698ec258
   )
 }
 
