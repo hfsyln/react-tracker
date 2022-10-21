@@ -2,29 +2,36 @@ import React from "react";
 import { FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
-const AddTask = ({sendTask}) => {
+const AddTask = ({item}) => {
   
-  console.log(sendTask)
-  const [sil, setSil] = useState(true)
+  console.log(item)
+  //const {task, id, date} = item
+  
+  const [sil, setSil] = useState(false)
+  const [çiz, setÇiz] = useState(false)
 
   const deleteTask =()=> {
     setSil(!sil)
   }
+  const üstÇiz = () => {
+    setÇiz(!çiz)
+  }
   
   return (
-    <div >
-     {sendTask?.map((item)=>
-      <div class="card-body">
-            <div key={item.id} class="card">
-                <h5>{item.task}</h5>
-                <p class="card-text">{item.date}</p>
-              <FaTimes
-           style={{ color: "red" }}
-           onClick={deleteTask}
-         />
-      </div> 
-      </div>)}
+    <div>
+           {item && !sil ?  <div class="card-body"> 
+                 <div  class="card" onClick={üstÇiz}>
+                  <div style={{textDecoration: çiz ? "line-through" : ""}}>
+                      <h5>task</h5>
+                      <p class="card-text">date</p>
+                      <FaTimes
+                      style={{ color: "red" }}
+                      onClick={deleteTask}/> 
+                      </div>
+                  </div> 
+  </div> : "" }
     </div>
+    
   )
 }
-export default AddTask
+export default AddTask;

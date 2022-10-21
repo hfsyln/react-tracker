@@ -1,39 +1,34 @@
 import React, { useState } from 'react'
+import AddTask from '../AddTask';
 import Task from '../Task/Task';
 
 
 const Button = () => {
     const [clickBtn, setClickBtn] = useState(true);
+    const [show, setShow] = useState(true)
+    const [sendTask, setSendTask] = useState([])
     
  console.log(clickBtn)
  
  const clicked = (e) => {
     setClickBtn(!clickBtn)
-
-    if(clickBtn) {
-       e.target.style.backgroundColor = "red";
-       e.target.textContent = "Close Add Task Bar"
-    }
-    else {
-        e.target.style.backgroundColor = "pink";
-        e.target.textContent = "Show Add Task Bar"
-        e.nextElementSibling.style.display = "none"
-
-    }
+    setShow(!show)
  }
  
   return (
    
     <div className='button'>
         
-        <button onClick = {clicked}>Show Add Task Bar</button>
+        <button style={{ backgroundColor: show ? "#de6fa1" : "#e2725b" }} onClick = {clicked}>
+          {show ? "Show Add Task Bar"  : "Close Add Task Bar"}
+          
+          </button>
 
-      {!clickBtn && <Task/> }
-            
-        
+      {!clickBtn && <Task/>}
+      
      
     </div>
   )
 
   }
-export default Button
+export default Button;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddTask from "../AddTask";
+import Button from "../button/Button"
 
 const Task = () => {
   
@@ -63,8 +64,16 @@ const Task = () => {
       </div>
       <button className="btn btn-danger mb-4">Submit</button>
     </form>
-     <AddTask  sendTask = {sendTask}/>
+
+    {sendTask.length ?
+    sendTask.map((item) =>{
+      console.log(item)
+      return <AddTask  item = {item}/>
+    }) : <p>No Task to Show</p>}
+
+    
   </div>
+   
   )
 }
 
