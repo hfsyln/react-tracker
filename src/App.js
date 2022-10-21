@@ -4,12 +4,12 @@ import Button from './components/button/Button';
 import Header from "./components/Header"
 
 
+
 function App() {
   return (
     <div className="container">
       <Header/>
       <Button/>
-      <AddTask/>
     </div>
   );
 }
