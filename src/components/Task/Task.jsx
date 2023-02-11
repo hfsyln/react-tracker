@@ -34,14 +34,14 @@ const Task = () => {
     
     <div className="container text-center mt-4">
     <h1 className="display-6 text-danger">Add Your Tutorial</h1>
-    <form onSubmit={handleSubmit}>
-      <div className="mb-3">
+    <form onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column",gap:"1rem", alignItems:"center", padding:"1rem"}}>
+      <div style={{display:"flex", gap:"1rem", alignItems:"center"}}>
         <label htmlFor="title" className="form-label">
-          Task
+          Task:
         </label>
         <input
           type="text"
-          className="form-control"
+          style={{maxWidth:"6rem", height:"2rem"}}
           id="title"
           placeholder="Enter your title"
           value={task}
@@ -49,13 +49,13 @@ const Task = () => {
           required
         />
       </div>
-      <div className="mb-3">
+      <div style={{display:"flex", gap:"1rem", alignItems:"center"}}>
         <label htmlFor="desc" className="form-label">
-          Date
+          Date:
         </label>
         <input
           type="date"
-          className="form-control"
+          style={{maxWidth:"6rem", height:"2rem"}}
           id="desc"
           placeholder="Enter your Description"
           value={date}
@@ -63,7 +63,7 @@ const Task = () => {
           required
         />
       </div>
-      <button className="btn btn-danger mb-4">Submit</button>
+      <button style={{backgroundColor:"pink", border:"none", height:"2rem", width:"4rem"}}>Submit</button>
     </form>
 
     {sendTask.length ?

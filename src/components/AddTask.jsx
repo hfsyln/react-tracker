@@ -18,11 +18,11 @@ const AddTask = ({item}) => {
   }
   
   return (
-    <div>
-           {item && !sil ?  <div class="card-body" key = {item.id}> 
+    <div >
+           {item && !sil ?  <div class="card-body" style={{padding:"1rem"}} key = {item.id}> 
                  <div  class="card" onClick={üstÇiz}>
                   <div style={{textDecoration: çiz ? "line-through" : ""}}>
-                      <h5>{task}</h5>
+                      <h5 style={{fontSize:"1rem"}}>{task.toUpperCase()}</h5>
                       <p class="card-text">{item.date}</p>
                       <FaTimes
                       style={{ color: "red" }}

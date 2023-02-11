@@ -17,9 +17,9 @@ const Button = () => {
  
   return (
    
-    <div className='button'>
+    <div style={{padding:"1rem"}} className='button'>
         
-        <button style={{ backgroundColor: show ? "#de6fa1" : "#e2725b" }} onClick = {clicked}>
+        <button style={{ backgroundColor: show ? "#de6fa1" : "#e2725b", width:"5rem" }} onClick = {clicked}>
           {show ? "Show Add Task Bar"  : "Close Add Task Bar"}
           
           </button>
